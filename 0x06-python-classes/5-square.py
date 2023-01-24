@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""creating the square"""
+"""class Square that defines a square"""
 
 
 class Square():
@@ -26,6 +26,5 @@ class Square():
     def my_print(self):
         if not self.__size:
             print("")
-
-            for i in range(self.__size):
-                print("#" * self.size)
+        for i in range(self.__size):
+            print("#" * self.__size)

@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""class square that defines a square"""
+"""class Square that defines a square"""
 
 
-class square():
+class Square():
     """square class with it's size and proper validation"""
 
     def __init__(self, size=0):
