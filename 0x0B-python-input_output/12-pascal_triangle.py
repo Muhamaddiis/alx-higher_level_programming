@@ -1,34 +1,22 @@
 #!/usr/bin/python3
-""" module: factorial """
 
-
-def factorial(n):
-    """ function to get the factorial of a number
-
-
-    Args:
-        @n: the value
-    """
-    if n == 0 or n == 1:
-        return 1
-    return n * factorial(n - 1)
+"""Defines a Pascal's Triangle function."""
 
 
 def pascal_triangle(n):
-    """ pascal triangle
+    """Represent Pascal's Triangle of size n.
 
-
-    Args:
-        @n: the value of the triangle table
+    Returns a list of lists of integers representing the triangle.
     """
     if n <= 0:
         return []
 
-    bigger_list = []
-    for k in range(1, n + 1):
-        lst = []
-        for i in range(0, k):
-            val = int(factorial(k - 1) / (factorial(i) * factorial(k - i - 1)))
-            lst.append(val)
-        bigger_list.append(lst)
-    return (bigger_list)
+    triangles = [[1]]
+    while len(triangles) != n:
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
+    return triangles
