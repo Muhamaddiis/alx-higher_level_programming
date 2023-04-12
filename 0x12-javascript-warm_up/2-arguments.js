@@ -1,4 +1,4 @@
-let args = procces.argv;
+let args = procces.argv.slice(2);
 
 if (args.length === 0) {
     console.log('No argument');
