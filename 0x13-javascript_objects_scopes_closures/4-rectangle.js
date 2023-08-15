@@ -2,16 +2,20 @@
 
 module.exports = class Rectangle {
   constructor (w, h) {
-    if (w > 0 || h > 0) {
-      [this.width, this.height] = [w, h];
+    if (w > 0 && h > 0 && Number.isInteger(w) && Number.isInteger(h)) {
+      this.width = w;
+      this.height = h;
     } else {
+      // Create an empty object if w or h is not valid
       return {};
     }
   }
 
   print () {
-    for (let i = 0; i <= this.height; i++) {
-      console.log('X'.repeat(this.width));
+    if (this.width > 0 && this.height > 0) {
+      for (let i = 0; i < this.height; i++) {
+        console.log('X'.repeat(this.width));
+      }
     }
   }
 
@@ -20,6 +24,7 @@ module.exports = class Rectangle {
   }
 
   double () {
-    [this.width, this.height] = [this.width * 2, this.height * 2];
+    this.width *= 2;
+    this.height *= 2;
   }
 };
