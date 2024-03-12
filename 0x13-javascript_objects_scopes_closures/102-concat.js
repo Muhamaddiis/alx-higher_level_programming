@@ -3,8 +3,8 @@
 const fs = require('fs');
 
 if (process.argv.length !== 5) {
-    console.log("Usage: ./102-concat.js <file1> <file2> <destination>");
-    process.exit(1);
+  console.log('Usage: ./102-concat.js <file1> <file2> <destination>');
+  process.exit(1);
 }
 
 const [, , file1, file2, destination] = process.argv;
