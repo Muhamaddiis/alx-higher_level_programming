@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const fs = require('fs');
 const filepath = process.argv[2];
-const data = 'python is cool';
+const data = process.argv[3]
 fs.writeFile(filepath, data, 'utf-8', (error, data) => {
   if (error) {
     console.error(error);
